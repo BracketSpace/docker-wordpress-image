@@ -36,5 +36,11 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 	chmod +x wp-cli.phar && \
 	mv wp-cli.phar /usr/local/bin/wp
 
+# Enable SSL
+RUN a2enmod ssl && \
+	a2enmod headers && \
+	a2ensite default-ssl && \
+	service apache2 restart
+
 WORKDIR /var/www/html
 VOLUME /var/www/html

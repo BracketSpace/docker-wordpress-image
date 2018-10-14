@@ -8,6 +8,11 @@ Image based on the official WordPress image and packed with all the needed WordP
 * WP-CLI
 * Mailhog
 
+The image is supporting SSL host with default certificates:
+
+* /etc/ssl/private/ssl-cert-snakeoil.key
+* /etc/ssl/certs/ssl-cert-snakeoil.pem
+
 # Usage
 
 Pull the image: `docker pull bracketspace/wordpress`
