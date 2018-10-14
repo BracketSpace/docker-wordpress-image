@@ -20,7 +20,6 @@ RUN set -x \
 	&& make -j"$(nproc)" \
 	&& make install \
 	&& make clean
-COPY ./config/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 # Install extra php extensions
 RUN apt-get update && \
