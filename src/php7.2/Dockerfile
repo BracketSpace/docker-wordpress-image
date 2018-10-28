@@ -38,6 +38,8 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 	chown www-data:www-data /var/www/.wp-cli
 
 # Enable SSL
+RUN openssl req -subj '/C=US/ST=None/L=None/O=OrgName/OU=IT Department/CN=*.localhost' -x509 -newkey rsa:4096 -nodes -keyout /etc/ssl/private/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem -days 9000
+
 RUN a2enmod ssl && \
 	a2enmod headers && \
 	a2ensite default-ssl && \
