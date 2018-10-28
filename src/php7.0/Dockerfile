@@ -29,8 +29,7 @@ RUN apt-get update && \
 	apt-get install -y libmcrypt-dev && docker-php-ext-install mcrypt && \
 	docker-php-ext-install json && \
 	docker-php-ext-install mbstring && \
-	docker-php-ext-install soap && \
-	docker-php-ext-install zip
+	docker-php-ext-install soap
 
 # Install WP-CLI
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
